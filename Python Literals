@@ -1,0 +1,105 @@
+# ==============================================================================
+# PYTHON LITERALS PRACTICE LAB: 15 PROGRESSIVE EXAMPLES
+# ==============================================================================
+
+print("--- START OF LITERALS PRACTICE ---\n")
+
+# ------------------------------------------------------------------------------
+# SECTION 1: TEXT & STRING LITERALS (Examples 1-5)
+# ------------------------------------------------------------------------------
+
+# 1. Standard String Literal
+# Uses double quotes to safely include an internal single quote.
+msg_1 = "Welcome to Python's literal lab."
+print(f"1. Standard String: {msg_1}")
+
+# 2. Multi-line String Literal
+# Uses triple quotes to preserve exact line breaks and formatting.
+msg_2 = """Line One
+Line Two
+Line Three"""
+print(f"2. Multi-line String:\n{msg_2}")
+
+# 3. Raw String Literal
+# Prefix 'r' stops backslashes from acting as escape sequences.
+msg_3 = r"C:\Users\NewFolder\test.txt"
+print(f"3. Raw String (Path): {msg_3}")
+
+# 4. Formatted String Literal (f-string)
+# Embeds variables directly inside a string literal.
+language = "Python"
+msg_4 = f"I am coding in {language}."
+print(f"4. f-string: {msg_4}")
+
+# 5. Byte String Literal
+# Prefix 'b' converts characters straight into raw 8-bit ASCII bytes.
+msg_5 = b"NetworkPacket"
+print(f"5. Byte String: {msg_5} (Type: {type(msg_5)})")
+
+
+# ------------------------------------------------------------------------------
+# SECTION 2: NUMERIC LITERALS (Examples 6-10)
+# ------------------------------------------------------------------------------
+
+# 6. Integer with Visual Separators
+# Underscores make massive numbers readable without affecting value.
+num_6 = 5_000_000
+print(f"\n6. Large Integer: {num_6}")
+
+# 7. Float Literal (Scientific Notation)
+# Represents 3.5 * 10^3 (3500.0).
+num_7 = 3.5e3
+print(f"7. Float (Scientific): {num_7}")
+
+# 8. Binary Literal
+# Prefix '0b' inputs a base-2 number. Evaluates to decimal 5.
+num_8 = 0b101
+print(f"8. Binary 0b101 equals: {num_8}")
+
+# 9. Hexadecimal Literal
+# Prefix '0x' inputs a base-16 number. Evaluates to decimal 255.
+num_9 = 0xFF
+print(f"9. Hexadecimal 0xFF equals: {num_9}")
+
+# 10. Complex Number Literal
+# Uses 'j' to explicitly mark the imaginary component.
+num_10 = 3 + 4j
+print(f"10. Complex Number: {num_10}")
+
+
+# ------------------------------------------------------------------------------
+# SECTION 3: BOOLEAN & SPECIAL LITERALS (Examples 11-12)
+# ------------------------------------------------------------------------------
+
+# 11. Boolean Literal
+# True and False must always be capitalized.
+bool_11 = True
+print(f"\n11. Boolean value: {bool_11}")
+
+# 12. Special None Literal
+# Used to signify the absence of a value or an empty state.
+empty_12 = None
+print(f"12. Special Literal: {empty_12}")
+
+
+# ------------------------------------------------------------------------------
+# SECTION 4: COLLECTION LITERALS (Examples 13-15)
+# ------------------------------------------------------------------------------
+
+# 13. List Literal
+# Ordered, mutable sequence defined using square brackets.
+list_13 = ["Apple", 42, False]
+print(f"\n13. List Literal: {list_13}")
+
+# 14. Single-Element Tuple Literal
+# Crucial: The trailing comma defines a one-item tuple, not the parentheses.
+tuple_14 = ("Solo Element",)
+print(f"14. Tuple Literal: {tuple_14} (Type: {type(tuple_14)})")
+
+# 15. Dictionary Literal
+# Key-value mapping defined using curly braces and colons.
+dict_15 = {"item": "Laptop", "price": 999.99}
+print(f"15. Dictionary Literal: {dict_15}")
+
+print("\n--- END OF LITERALS PRACTICE ---")
+
