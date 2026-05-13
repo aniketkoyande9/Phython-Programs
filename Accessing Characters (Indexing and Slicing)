@@ -1,0 +1,14 @@
+#  Index positions:  0  1  2  3  4  5
+#                   P  y  t  h  o  n
+# Negative Index:  -6 -5 -4 -3 -2 -1
+word = "Python"
+
+# Indexing: Extract a single character
+print(word[0])   # Output: P (First character)
+print(word[-1])  # Output: n (Last character using negative index)
+
+# Slicing: Extract a substring using [start : stop]
+# Note: The 'stop' index is exclusive (not included)
+print(word[0:4]) # Output: Pyth
+print(word[2:])  # Output: thon (Slices from index 2 to the end)
+print(word[::-1])# Output: nohtyP (Trick to reverse a string)

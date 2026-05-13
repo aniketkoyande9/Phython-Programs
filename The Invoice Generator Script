@@ -1,0 +1,85 @@
+from datetime import datetime
+
+# 1. SETUP INVOICE METADATA
+store_name = "TECHMUMBAI ELECTRONICS"
+location = "Kurla, Mumbai"
+invoice_no = "INV-2026-0892"
+date_str = datetime.now().strftime("%d-%b-%Y %I:%M %p")
+
+# 2. SOURCE DATA: List of items (Product Name, Quantity, Unit Price)
+cart_items = [
+    ("Wireless Mouse", 2, 1250.00),
+    ("Mechanical Keyboard", 1, 4500.00),
+    ("USB-C Hub Adapter", 3, 850.50),
+    ("Monitor Stand", 1, 2200.00)
+]
+
+# 3. PRINT RECEIPT HEADER WITH CENTER ALIGNMENT
+print(f"{'=' * 46}")
+print(f"{store_name:^46}")
+print(f"{location:^46}")
+print(f"{'=' * 46}")
+print(f"Receipt No: {invoice_no:<15}")
+print(f"Date/Time:  {date_str:<15}")
+print(f"{'-' * 46}")
+
+# 4. PRINT TABLE HEADERS WITH FIXED COLUMN WIDTHS
+# Description: 22 chars (left), Qty: 5 chars (center), Price: 15 chars (right)
+print(f"{'Description':<22} | {'Qty':^5} | {'Price (INR)':>13}")
+print(f"{'-' * 46}")
+
+# 5. LOOP THROUGH ITEMS AND CALCULATE TOTALS
+subtotal = 0.0
+
+for item, qty, price in cart_items:
+    item_total = qty * price
+    subtotal += item_total
+
+    # Format each row dynamically to maintain grid lines
+    print(f"{item:<22} | {qty:^5} | {item_total:>13,.2f}")
+
+# 6. CALCULATE TAX AND FINAL TOTAL
+cgst_rate = 0.09  # 9% CGST
+sgst_rate = 0.09  # 9% SGST
+cgst_amount = subtotal * cgst_rate
+sgst_amount = subtotal * sgst_rate
+grand_total = subtotal + cgst_amount + sgst_amount
+
+# 7. PRINT SUMMARY AND FOOTER
+print(f"{'-' * 46}")
+print(f"{'Subtotal:':<29} Rs. {subtotal:>11,.2f}")
+print(f"{f'CGST ({cgst_rate:.0%}):':<29} Rs. {cgst_amount:>11,.2f}")
+print(f"{f'SGST ({sgst_rate:.0%}):':<29} Rs. {sgst_amount:>11,.2f}")
+print(f"{'=' * 46}")
+print(f"{'GRAND TOTAL:':<29} Rs. {grand_total:>11,.2f}")
+print(f"{'=' * 46}")
+print(f"{'THANK YOU FOR SHOPPING WITH US!':^46}")
+print(f"{'=' * 46}")
+
+"""
+"C:\Users\Aniket Koyande\PycharmProjects\PythonProjectPractice\.venv\Scripts\python.exe" "C:\Users\Aniket Koyande\PycharmProjects\PythonProjectPractice\TheStringProcessingProgram.py" 
+==============================================
+            TECHMUMBAI ELECTRONICS            
+               Chembur, Mumbai                
+==============================================
+Receipt No: INV-2026-0892  
+Date/Time:  13-May-2026 05:17 PM
+----------------------------------------------
+Description            |  Qty  |   Price (INR)
+----------------------------------------------
+Wireless Mouse         |   2   |      2,500.00
+Mechanical Keyboard    |   1   |      4,500.00
+USB-C Hub Adapter      |   3   |      2,551.50
+Monitor Stand          |   1   |      2,200.00
+----------------------------------------------
+Subtotal:                     Rs.   11,751.50
+CGST (9%):                    Rs.    1,057.63
+SGST (9%):                    Rs.    1,057.63
+==============================================
+GRAND TOTAL:                  Rs.   13,866.77
+==============================================
+       THANK YOU FOR SHOPPING WITH US!        
+==============================================
+
+Process finished with exit code 0
+"""

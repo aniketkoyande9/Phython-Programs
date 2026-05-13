@@ -1,0 +1,14 @@
+text = "   code everyday   "
+
+# Cleaning whitespace
+clean_text = text.strip()
+print(f"'{clean_text}'")  # Output: 'code everyday'
+
+# Changing case
+print(clean_text.upper())  # Output: CODE EVERYDAY
+print(clean_text.title())  # Output: Code Everyday
+
+# Finding and Replacing
+# Remember: replace() returns a new string; it doesn't modify clean_text
+new_text = clean_text.replace("everyday", "now")
+print(new_text)  # Output: code now

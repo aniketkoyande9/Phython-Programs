@@ -1,0 +1,12 @@
+message = "Learning Python is fun!"
+
+# Find the length (character count) using len()
+total_chars = len(message)
+print(total_chars)  # Output: 23
+
+# Membership Test: Check if a word exists inside the string using 'in'
+has_python = "Python" in message
+has_java = "Java" in message
+
+print(has_python)  # Output: True
+print(has_java)    # Output: False

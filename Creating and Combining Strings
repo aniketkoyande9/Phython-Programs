@@ -1,0 +1,10 @@
+first_name = "Rahul"
+last_name = "Sharma"
+
+# Concatenation: Joining strings with +
+full_name = first_name + " " + last_name
+print(full_name)  # Output: Rahul Sharma
+
+# Replication: Multiplying a string with *
+divider = "-" * 10
+print(divider)    # Output: ----------
