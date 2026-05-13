@@ -1,0 +1,61 @@
+import math
+
+# 1. RAW INPUT DATA (Multi-line text literal with mixed formatting)
+RAW_DATA = """
+    USER_ID: 1042  |  STATUS: active  |  TAGS: #python,#developer,#async
+    BIO:   "Hello! I am a software engineer working from Mumbai. 
+    I love clean code, automation, and building scalable systems."
+"""
+
+print("==================================================")
+print("       RUNNING ADVANCED STRING PROCESSOR          ")
+print("==================================================")
+
+# 2. STRING CLEANING & EXTRACTION
+# Remove leading/trailing whitespaces and split the raw text into individual lines
+lines = RAW_DATA.strip().splitlines()
+
+# Extract User ID using split and strip
+user_line = lines[0]
+user_id_part, status_part, tags_part = user_line.split("|")
+
+user_id = user_id_part.replace("USER_ID:", "").strip()
+status = status_part.replace("STATUS:", "").strip().upper()
+
+# 3. ADVANCED STRING MANIPULATION (Parsing Tags)
+# Clean up hash symbols and split comma-separated tags into a list literal
+raw_tags = tags_part.replace("TAGS:", "").strip()
+tags_list = [tag.strip("#") for tag in raw_tags.split(",")]
+
+# 4. TEXT ANALYSIS (Bio Processing)
+# Reconstruct the multi-line bio into a single, clean paragraph
+bio_line_1 = lines[1].replace('BIO:   "', "").strip()
+bio_line_2 = lines[2].strip().rstrip('"')
+full_bio = f"{bio_line_1} {bio_line_2}"
+
+# Calculate metrics using string search and inspection methods
+char_count = len(full_bio)
+word_count = len(full_bio.split())
+has_mumbai = "Mumbai" in full_bio
+python_index = RAW_DATA.find("python")
+
+# 5. GENERATING FORMATTED REPORT (f-strings with alignment and padding)
+print("\n[+] PROCESSING COMPLETE. GENERATING REPORT:\n")
+
+# Using f-string modifier syntax for visual alignments
+print(f"{'Metric':<20} | {'Value':<30}")
+print("-" * 55)
+print(f"{'User Identification':<20} | ID #{user_id}")
+print(f"{'Account Status':<20} | {status}")
+print(f"{'Extracted Tags':<20} | {', '.join(tags_list)}")
+print(f"{'Total Bio Length':<20} | {char_count} characters")
+print(f"{'Total Word Count':<20} | {word_count} words")
+print(f"{'Located in Mumbai?':<20} | {has_mumbai}")
+print(f"{'Raw Python Index':<20} | Position {python_index}")
+
+# 6. TEXT TRANSFORMATION (Masking and Censor Example)
+# Dynamically replace a target word to showcase immutability overrides
+censored_bio = full_bio.replace("clean code", "█████ ████")
+print(f"\n[+] Censored Bio Preview:\n    \"{censored_bio}\"")
+
+print("\n==================================================")
