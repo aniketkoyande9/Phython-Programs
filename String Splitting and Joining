@@ -1,0 +1,9 @@
+# Splitting: Breaks a string into a list based on a delimiter
+csv_data = "apple,banana,cherry"
+fruits_list = csv_data.split(",")
+print(fruits_list)  # Output: ['apple', 'banana', 'cherry']
+
+# Joining: Glues a list of strings back together using a connector string
+connector = " -> "
+result_string = connector.join(fruits_list)
+print(result_string)  # Output: apple -> banana -> cherry
